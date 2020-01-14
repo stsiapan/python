@@ -17,7 +17,7 @@ pipeline {
                     sshagent(['publisher']) {
                          sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${WORKSPACE}/monitor.py ${remote_user}@${remote_ip}:/tmp"
                          sh "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${remote_user}@${remote_ip} 'sudo python /tmp/monitor.py'"
-                         sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${remote_user}@${remote_ip}:/tmp/monitor.py ${WORKSPACE}/monitor.py "
+                         sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${remote_user}@${remote_ip}:/tmp/monitor.py ${WORKSPACE}/"
                          
                     }
                 }
