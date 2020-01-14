@@ -27,8 +27,9 @@ try:
         with open ('my.html', 'a') as f:
             f.write('<h2 style="color:green;">java process is running and have pid: {}</h2>\n'.format (b))
 except:
-    print ('<h2 style="color:red;">java is over</h2>\n')
-
+    #print ('<h2 style="color:red;">java is over</h2>\n')
+    with open ('my.html', 'a') as f:
+        f.write('<h2 style="color:red;">java is over</h2>\n')
 
 with open ('my.html', 'a') as f:
     f.write('###***###\n<h3 style="color:blue;">memory is: {}</h3>\n###***###\n<h3 style="color:blue;">disk usage is: {}</h3>\n'.format(alarm_var, memory_usage))
