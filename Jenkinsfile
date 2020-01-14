@@ -23,6 +23,11 @@ pipeline {
                 }
             }
         }
+        stage('Rich text publisher') {
+            steps {
+              stableText ${FILE:monitor.py}                
+            }
+        }        
 
     }
 }
