@@ -1,5 +1,5 @@
 def remote_user = "vagrant"
-def remote_ip = 192.168.143.154
+def remote_ip = "192.168.143.154"
 pipeline {
     agent any
 
