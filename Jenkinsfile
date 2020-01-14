@@ -23,10 +23,13 @@ pipeline {
                 }
             }
         }
+        stage('Rich text publisher') {
+            steps {
+              parserName ('HTML')
+              stableText ("${FILE:monitor.py"})                
+            }
+        }        
+
     }
-    post {
-      always {
-        stableText ${FILE:monitor.py}
-      }
-    }
+
 }
