@@ -10,7 +10,7 @@ for i in ps_list:
 
 try:
     if a:
-        print ('java process is running and have pid: ', b)
+        print ('java process is running and have pid: {0} '.format (b))
 except:
     print ('java is over')
 
