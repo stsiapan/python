@@ -14,7 +14,7 @@ pipeline {
             steps {
                 echo 'Deploying....'
                 withCredentials([sshUserPrivateKey(credentialsId: 'publisher', keyFileVariable: 'identity', passphraseVariable: '', usernameVariable: 'userName')]) {
-                    sshagent(['to_web']) {
+                    sshagent(['publisher']) {
                          sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${WORKSPACE}/monitor.py ${remote_user}@${remote_ip}:/tmp"
                          sh "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${remote_user}@${remote_ip} 'sudo python /tmp/monitor.py'"
                          
