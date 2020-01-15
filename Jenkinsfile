@@ -28,7 +28,7 @@ pipeline {
     always {
       rtp ([
         stableText: '${FILE:my.html}'
-      ]
+      ])
     }
   }
 }
