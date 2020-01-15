@@ -45,7 +45,7 @@ except:
     with open ('my.html', 'a') as f:
         f.write('<h2 style="color:red;">java is over</h2>\n')
 
-with open ('my.html', 'w') as f:
+with open ('my.html', 'a') as f:
     for i in disk_u:
         f.write('<h3 style="color:brown;">{} {}</h3>\n'.format(i, disk_u[i]))
 
