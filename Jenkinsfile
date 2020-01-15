@@ -26,7 +26,9 @@ pipeline {
      }
   post {
     always {
-      rtp 'stableText ${FILE:my.html}'
+      rtp ([
+        stableText: '${FILE:my.html}'
+      ]
     }
   }
 }
