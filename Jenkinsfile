@@ -17,18 +17,13 @@ pipeline {
                     sshagent(['publisher']) {
                          sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${WORKSPACE}/monitor.py ${remote_user}@${remote_ip}:/tmp"
                          sh "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${remote_user}@${remote_ip} 'sudo python /tmp/monitor.py'"
-                         sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${remote_user}@${remote_ip}:/tmp/monitor.py ${WORKSPACE}/"
+                         sh "scp -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ${remote_user}@${remote_ip}:~/my.html ${WORKSPACE}/"
                          
                     }
                 }
             }
         }
-        stage('Rich text publisher') {
-            steps {
-              parserName ('HTML')
-              stableText ("${FILE:monitor.py"})                
-            }
-        }        
+      
 
     }
 
