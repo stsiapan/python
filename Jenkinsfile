@@ -23,8 +23,10 @@ pipeline {
                 }
             }
         }
-      
-
+     }
+  post {
+    always {
+      rtp 'stableText ${FILE:my.html}'
     }
-
+  }
 }
