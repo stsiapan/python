@@ -4,7 +4,6 @@ alarm_percent = 90
 alarm_var = psutil.disk_usage('/')
 ps_list = psutil.pids()
 memory_usage = psutil.virtual_memory()
-delimeter = "####****####"
 
 disk_u = {
     'total disk usage (Gb):': alarm_var.total/1024000000.,
