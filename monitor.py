@@ -45,14 +45,10 @@ except:
     with open ('my.html', 'a') as f:
         f.write('<h2 style="color:red;">java is over</h2>\n')
 
-for i in disk_u:
-    #print i, disk_u[i]
-    with open ('my.html', 'a') as f:
-        for i in disk_u:
-            f.write('<h3 style="color:brown;">{} {}</h3>\n'.format(i, disk_u[i]))
+with open ('my.html', 'w') as f:
+    for i in disk_u:
+        f.write('<h3 style="color:brown;">{} {}</h3>\n'.format(i, disk_u[i]))
 
-for i in mem_u:
-    # print i, mem_u[i]
-    with open ('my.html', 'a') as f:
-        for i in mem_u:
-            f.write('<h3 style="color:blue;">{} {}</h3>\n'.format(i, mem_u[i]))
+with open ('my.html', 'a') as f:
+    for i in mem_u:
+        f.write('<h3 style="color:blue;">{} {}</h3>\n'.format(i, mem_u[i]))
